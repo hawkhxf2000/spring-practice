@@ -1,9 +1,29 @@
 # Springboot-Shiro整合基础学习
 
-1. 导入shiro依赖
+1. 建库
+~~~
+-- auto-generated definition
+create table account
+(
+    id       int auto_increment
+        primary key,
+    username varchar(50)                  null,
+    password varchar(50) default '123456' null,
+    perms    varchar(50)                  null,
+    role     varchar(50)                  null,
+    constraint account_username_uindex
+        unique (username)
+);
+
+
+~~~
+
+2. 导入shiro依赖
 
 ~~~
 <!--        为了跟视频教程保持一致，暂时使用与教程一致的1.5.3版本，等项目跑通以后再更换为1.9.0最新版看看是否也能运行-->
+<!--        测试证明，1.9.0版本可以正常运行-->
+
 <dependency>
     <groupId>org.apache.shiro</groupId>
     <artifactId>shiro-spring</artifactId>
@@ -11,7 +31,7 @@
 </dependency>
 ~~~
 
-2. 在realm包中创建Realm类,继承AuthorizingRealm并实现其两个方法
+3. 在realm包中创建Realm类,继承AuthorizingRealm并实现其两个方法
 ~~~
 public class AccountRealm extends AuthorizingRealm {
 
@@ -53,7 +73,7 @@ public class AccountRealm extends AuthorizingRealm {
 }
 ~~~
 
-3. 在config包中创建Shiro配置类ShiroConfig
+4. 在config包中创建Shiro配置类ShiroConfig
 ~~~
 @Configuration
 public class ShiroConfig {
@@ -93,9 +113,9 @@ public class ShiroConfig {
 }
 ~~~
 
-4. 在main/resources/templates文件夹下创建四个页面： index.html, main.html, manager.html, administrator.html，以演示不同权限与角色设置的效果
+5. 在main/resources/templates文件夹下创建四个页面： index.html, main.html, manager.html, administrator.html，以演示不同权限与角色设置的效果
 
-5. 在ShiroConfig类的shiroFilterFactoryBean中加入过滤器以分配权限
+6. 在ShiroConfig类的shiroFilterFactoryBean中加入过滤器以分配权限
 ~~~
 /**
      * step 3: 将DefaultWebSecurityManager对象注入ShiroFilterFactoryBean对象，并注入IOC容器
@@ -119,7 +139,7 @@ public class ShiroConfig {
 ~~~
 此时如果输入localhost:8080/index可以访问index页面，但是跳转到其他三个页面时，因为没有登录数据，所以都无法显示，而且会被shiro转到默认的login.jsp去。
 
-6. 增加index.html页面
+7. 增加index.html页面
 ~~~
 <body>
 <form action="/login" method="post">
@@ -146,7 +166,7 @@ public class ShiroConfig {
 </body>
 ~~~
 
-7. 在MyController类中新建方法login(), 接收登录页传过来的登录信息并将其存入Token中，并利用shiro的Subject类将其封装，以便shiro框架进行身份校验
+8. 在MyController类中新建方法login(), 接收登录页传过来的登录信息并将其存入Token中，并利用shiro的Subject类将其封装，以便shiro框架进行身份校验
 ~~~
 MyController.java
 
@@ -174,7 +194,7 @@ MyController.java
     }
 ~~~
 
-8. 使用Thymeleaf将Model类获得的异常信息传递给login页面
+9. 使用Thymeleaf将Model类获得的异常信息传递给login页面
 ~~~
 login.html
 <head>
@@ -208,7 +228,7 @@ login.html
 </body>
 ~~~
 
-9. 对登录用户进行权限授权
+10. 对登录用户进行权限授权
 ~~~
 AccountRealm.java
 
@@ -235,7 +255,7 @@ AccountRealm.java
     }
 ~~~
 
-10. 校验未成功返回未授权信息
+11. 校验未成功返回未授权信息
 ~~~
 ShiroConfig.java
 
@@ -263,7 +283,7 @@ MyController.java
     }
 ~~~
 
-11. 将用户名信息利用session传递到页面，使用thymeleaf渲染
+12. 将用户名信息利用session传递到页面，使用thymeleaf渲染
 ~~~
 MyController.java
 
@@ -297,7 +317,7 @@ index.html
 ......
 ~~~
 
-12. 使用subject中的logout方法实现logout功能
+13. 使用subject中的logout方法实现logout功能
 ~~~
 MyController.java
 
