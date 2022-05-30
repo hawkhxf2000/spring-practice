@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" xmlns:th="http://www.thymeleaf.org">
+    <title>Title</title>
+    <link rel="shortcut icon" href="#">
+</head>
+<body>
+<h1>Index</h1>
+<div th:if="${session.username} != null">
+    <span th:text = "${session.username} +', 欢迎回来' " style="font-size: 14px"></span>
+    <a href="logout" style="margin-left: 20px; font-size:14px">退出</a>
+</div>
+<a href="/main">main</a> | <a href="/manager">manager</a> | <a href="/administrator">administrator</a>
+</body>
+</html>

@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" xmlns:th="http://www.thymeleaf.org">
+    <title>Title</title>
+    <link rel="shortcut icon" href="#">
+</head>
+<body>
+<form action="/login" method="post">
+    <table>
+        <span th:text="${errorMsg}"></span>
+        <tr>
+            <td>用户名：</td>
+            <td>
+                <input type="text" name="username" placeholder="请输入用户名">
+            </td>
+        </tr>
+        <tr>
+            <td>密码：</td>
+            <td>
+                <input type="password" name="password" placeholder="请输入密码">
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <input type="submit" value="登录">
+            </td>
+        </tr>
+    </table>
+</form>
+</body>
+</html>
