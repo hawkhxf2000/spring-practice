@@ -43,7 +43,7 @@
         <dependency>
             <groupId>com.baomidou</groupId>
             <artifactId>mybatis-plus-boot-starter</artifactId>
-            <version>3.5.1</version>
+            <version>3.5.2</version>
         </dependency>
 <!--        为了跟视频教程保持一致，暂时使用与教程一致的1.5.3版本，等项目跑通以后再更换为1.9.0最新版看看是否也能运行-->
         <dependency>
