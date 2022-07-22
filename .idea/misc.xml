@@ -4,10 +4,19 @@
     <option name="originalFiles">
       <list>
         <option value="$PROJECT_DIR$/spring-shiro/pom.xml" />
+        <option value="$PROJECT_DIR$/spring-swagger/pom.xml" />
+        <option value="$PROJECT_DIR$/spring-JWT/pom.xml" />
+        <option value="$PROJECT_DIR$/spring-JPA/pom.xml" />
       </list>
     </option>
   </component>
+  <component name="ProjectRootManager" version="2" project-jdk-name="openjdk-18" project-jdk-type="JavaSDK" />
   <component name="ProjectType">
     <option name="id" value="jpab" />
+  </component>
+  <component name="SwUserDefinedSpecifications">
+    <option name="specTypeByUrl">
+      <map />
+    </option>
   </component>
 </project>

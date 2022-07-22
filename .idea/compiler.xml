@@ -7,16 +7,25 @@
         <sourceOutputDir name="target/generated-sources/annotations" />
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
+        <module name="spring-JPA" />
+        <module name="spring-swagger" />
         <module name="spring-shiro" />
+        <module name="spring-JWT" />
       </profile>
     </annotationProcessing>
     <bytecodeTargetLevel>
+      <module name="spring-JPA" target="17" />
+      <module name="spring-JWT" target="17" />
       <module name="spring-shiro" target="17" />
+      <module name="spring-swagger" target="17" />
     </bytecodeTargetLevel>
   </component>
   <component name="JavacSettings">
     <option name="ADDITIONAL_OPTIONS_OVERRIDE">
+      <module name="spring-JPA" options="-parameters" />
+      <module name="spring-JWT" options="-parameters" />
       <module name="spring-shiro" options="-parameters" />
+      <module name="spring-swagger" options="-parameters" />
     </option>
   </component>
 </project>

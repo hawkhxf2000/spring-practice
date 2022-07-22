@@ -3,7 +3,10 @@
   <component name="ProjectModuleManager">
     <modules>
       <module fileurl="file://$PROJECT_DIR$/.idea/SpringBootPractice.iml" filepath="$PROJECT_DIR$/.idea/SpringBootPractice.iml" />
+      <module fileurl="file://$PROJECT_DIR$/spring-JPA/spring-JPA.iml" filepath="$PROJECT_DIR$/spring-JPA/spring-JPA.iml" />
+      <module fileurl="file://$PROJECT_DIR$/spring-JWT/spring-JWT.iml" filepath="$PROJECT_DIR$/spring-JWT/spring-JWT.iml" />
       <module fileurl="file://$PROJECT_DIR$/spring-shiro/spring-shiro.iml" filepath="$PROJECT_DIR$/spring-shiro/spring-shiro.iml" />
+      <module fileurl="file://$PROJECT_DIR$/spring-swagger/spring-swagger.iml" filepath="$PROJECT_DIR$/spring-swagger/spring-swagger.iml" />
     </modules>
   </component>
 </project>
